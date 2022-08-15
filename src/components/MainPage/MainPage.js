@@ -7,7 +7,14 @@ const MaimPage = (props) => {
     testSearch();
   });
 
-  return <div className="main-page"></div>;
+  return (
+    <div className="main-page">
+      <div className="mp-title">
+        <p>What to Watch?</p>
+      </div>
+    </div> 
+  )
+
 };
 
 export default MaimPage;
