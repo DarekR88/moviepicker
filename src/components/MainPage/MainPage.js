@@ -3,7 +3,13 @@ import { testSearch } from "../../API/index.js";
 import "./MainPage.scss";
 
 const MaimPage = (props) => {
+
+  function getRandomArbitrary() {
+    return console.log(Math.floor(Math.random() * (2022 - 1939) + 1939));
+  }
+
   useEffect(() => {
+    getRandomArbitrary()
     testSearch();
   });
 
