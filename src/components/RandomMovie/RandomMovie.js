@@ -6,7 +6,7 @@ const RandomMovie = (props) => {
   const [randomSearch, setRandomSearch] = useState("");
 
   useEffect(() => {
-    testSearch(Math.floor(Math.random() * (2022 - 1939) + 1939)).then((res) => {
+    testSearch(Math.floor(Math.random() * (2023 - 1939) + 1939)).then((res) => {
       setRandomSearch(res.data.results[0]);
     });
   }, []);
