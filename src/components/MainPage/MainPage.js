@@ -7,12 +7,12 @@ const MaimPage = (props) => {
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
-  }
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(searchTerm)
-  }
+    console.log(searchTerm);
+  };
 
   return (
     <div className="main-page">
