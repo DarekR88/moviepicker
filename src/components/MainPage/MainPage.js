@@ -5,7 +5,7 @@ import { multiSearch } from "../../API";
 
 const MaimPage = (props) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [multiRsults, setMultiResults] = useState("");
+  const [multiData, setMultiData] = useState([]);
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
@@ -14,19 +14,51 @@ const MaimPage = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     multiSearch(searchTerm).then((res) => {
-      setMultiResults(res.data.results);
+      setMultiData(res.data.results);
     });
   };
 
+  const renderMovies = () =>
+    multiData.map((data) => {
+      console.log(data);
+      if (data.media_type === "movie") {
+        return (
+          <div className="movie-card" key={data.id}>
+            <h2>{data.original_title}</h2>
+            <img
+              src={`http://image.tmdb.org/t/p/w500${data.poster_path}`}
+              alt=""
+            />
+            <p>{data.overview}</p>
+          </div>
+        );
+      } else if (data.media_type === "person") {
+        return (
+          <div className="person-card" key={data.id}>
+            <h2>{data.name}</h2>
+            <img
+              src={`http://image.tmdb.org/t/p/w500${data.profile_path}`}
+              alt=""
+            />
+            {/* <p>Known for: {data.known_for}</p> */}
+            <p>Popularity: {data.popularity}</p>
+          </div>
+        );
+      }
+    });
+
   return (
-    <div className="main-page">
-      <div className="mp-title">
-        <p>What to Watch?</p>
-        <form onSubmit={handleSubmit}>
-          <input type="text" onChange={handleChange} />
-          <input type="submit" value="Search" />
-        </form>
-        <RandomMovie />
+    <div className="main-container">
+      <div className="main-page">
+        <div className="mp-title">
+          <p>What to Watch?</p>
+          <form onSubmit={handleSubmit}>
+            <input type="text" onChange={handleChange} />
+            <input type="submit" value="Search" />
+          </form>
+          {renderMovies()}
+          <RandomMovie />
+        </div>
       </div>
     </div>
   );
