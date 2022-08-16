@@ -13,9 +13,10 @@ const RandomMovie = (props) => {
 
   return (
     <div className="random-movie-wrapper">
-      <div className="random-movie">
-        <p>Random Movie</p>
-      </div>
+      <p>Random Movie</p>
+      <p>Title: {randomSearch.original_title}</p>
+      <p>Synopsis: {randomSearch.overview}</p>
+      <p>Release Date: {randomSearch.release_date}</p>
     </div>
   );
 };
