@@ -11,6 +11,12 @@ const RandomMovie = (props) => {
     });
   }, []);
 
+  const pickNewRandom = () => {
+        testSearch(Math.floor(Math.random() * (2023 - 1939) + 1939)).then((res) => {
+      setRandomSearch(res.data.results[0]);
+    });
+  }
+
   return (
     <div className="random-movie-wrapper">
       <p>Random Movie</p>
@@ -18,6 +24,7 @@ const RandomMovie = (props) => {
       <p>Title: {randomSearch.original_title}</p>
       <p>Synopsis: {randomSearch.overview}</p>
       <p>Release Date: {randomSearch.release_date}</p>
+      <button className="new-random-button" onClick={pickNewRandom}>Roll the Dice</button>
     </div>
   );
 };
