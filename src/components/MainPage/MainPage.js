@@ -20,7 +20,6 @@ const MaimPage = (props) => {
 
   const renderMovies = () =>
     multiData.map((data) => {
-      console.log(data);
       if (data.media_type === "movie") {
         return (
           <div className="movie-card" key={data.id}>
@@ -40,8 +39,20 @@ const MaimPage = (props) => {
               src={`http://image.tmdb.org/t/p/w500${data.profile_path}`}
               alt=""
             />
-            {/* <p>Known for: {data.known_for}</p> */}
             <p>Popularity: {data.popularity}</p>
+            {data.known_for.map((knownForData) => {
+              return (
+                <div>
+                  <p>{knownForData.original_title}</p>
+                  <img
+                    src={`http://image.tmdb.org/t/p/w500${knownForData.poster_path}`}
+                    alt=""
+                  />
+                  <p>{knownForData.overview}</p>
+                </div>
+              );
+            })}
+            
           </div>
         );
       }
