@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./MovieSearch.scss";
 import { movieSearch } from "../../API";
 
-const MaimPage = (props) => {
+const MovieSearch = (props) => {
   const [movieData, setMovieData] = useState([]);
 
   useEffect(() => {
@@ -32,4 +32,4 @@ const MaimPage = (props) => {
   )
 };
 
-export default MaimPage;
+export default MovieSearch;

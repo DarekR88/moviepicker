@@ -26,7 +26,7 @@ const MaimPage = (props) => {
         );
       } else if (data.media_type === "tv") {
         return (
-          <div className="movie-card" key={data.id}>
+          <div className="tv-card" key={data.id}>
             <h2>{data.original_name}</h2>
             <img
               src={`http://image.tmdb.org/t/p/w500${data.poster_path}`}
