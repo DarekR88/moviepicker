@@ -6,6 +6,7 @@ import { multiSearch } from "../../API";
 const MaimPage = (props) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [multiData, setMultiData] = useState([]);
+  const [searchType, setSearchType] = useState("all");
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
@@ -18,6 +19,22 @@ const MaimPage = (props) => {
       setMultiData(res.data.results);
     });
   };
+
+  const setSearchAll = () => {
+    setSearchType("all")
+  }
+
+  const setSearchMovies = () => {
+    setSearchType("movies")
+  }
+
+  const setSearchTv = () => {
+    setSearchType("tv")
+  }
+
+  const setSearchPeople = () => {
+    setSearchType("people")
+  }
 
   const renderAllSearch = () =>
     multiData.map((data) => {
@@ -63,10 +80,10 @@ const MaimPage = (props) => {
     <div className="main-container">
       <div className="main-page">
         <div className="search-type-button-wrapper">
-          <button>All</button>
-          <button>Movies</button>
-          <button>Tv Shows</button>
-          <button>People</button>
+          <button onClick={setSearchAll}>All</button>
+          <button onClick={setSearchMovies}>Movies</button>
+          <button onClick={setSearchTv}>Tv Shows</button>
+          <button onClick={setSearchPeople}>People</button>
         </div>
         <div className="mp-title">
           <p>What to Watch?</p>
