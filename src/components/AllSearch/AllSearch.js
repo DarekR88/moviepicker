@@ -48,6 +48,7 @@ const MaimPage = (props) => {
               return (
                 <div>
                   <h2>{knownForData.original_title}</h2>
+                  <h2>{knownForData.original_name}</h2>
                   <img
                     src={`http://image.tmdb.org/t/p/w500${knownForData.poster_path}`}
                     alt=""

@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import AllSearch from "./components/AllSearch/AllSearch";
 import MovieSearch from "./components/MovieSearch/MovieSearch";
 import TvSearch from "./components/TvSearch/TvSearch";
+import PeopleSearch from "./components/PeopleSearch/PeopleSearch";
 import "./App.scss";
 
 const App = () => {
@@ -46,6 +47,8 @@ const App = () => {
     case "movies": results = <MovieSearch globalTerm={globalTerm} />
     break;
     case "tv": results = <TvSearch globalTerm={globalTerm} />
+    break;
+    case "people": results = <PeopleSearch globalTerm={globalTerm} />
     break;
     default: console.log("no results")
   }
