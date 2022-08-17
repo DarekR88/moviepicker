@@ -63,7 +63,7 @@ const App = () => {
         <button onClick={setSearchTv}>Tv Shows</button>
         <button onClick={setSearchPeople}>People</button>
       </div>
-      <form onSubmit={handleSubmit}>
+      <form className="search-form" onSubmit={handleSubmit}>
         <input type="text" onChange={handleChange} />
         <input type="submit" value="Search" />
       </form>
