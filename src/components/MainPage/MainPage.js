@@ -36,7 +36,7 @@ const MaimPage = (props) => {
     setSearchType("people")
   }
 
-  const renderAllSearch = () =>
+  const renderAllSearch = () => 
     multiData.map((data) => {
       if (data.media_type === "movie") {
         return (
