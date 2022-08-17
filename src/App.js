@@ -3,9 +3,12 @@ import MaimPage from "./components/MainPage/MainPage";
 import "./App.scss";
 
 const App = () => {
+
+  const [searchTerm, setSearchTerm] = useState("")
+
   return (
     <div className="App">
-      <MaimPage />
+      <MaimPage  setGlobalTerm={setSearchTerm} globalTerm={searchTerm} />
     </div>
   );
 };

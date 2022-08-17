@@ -9,6 +9,7 @@ const MaimPage = (props) => {
 
   const handleChange = (event) => {
     setSearchTerm(event.target.value);
+    props.setGlobalTerm(event.target.value)
   };
 
   const handleSubmit = (event) => {
@@ -18,7 +19,7 @@ const MaimPage = (props) => {
     });
   };
 
-  const renderMovies = () =>
+  const renderAllSearch = () =>
     multiData.map((data) => {
       if (data.media_type === "movie") {
         return (
@@ -61,13 +62,19 @@ const MaimPage = (props) => {
   return (
     <div className="main-container">
       <div className="main-page">
+        <div className="search-type-button-wrapper">
+          <button>All</button>
+          <button>Movies</button>
+          <button>Tv Shows</button>
+          <button>People</button>
+        </div>
         <div className="mp-title">
           <p>What to Watch?</p>
           <form onSubmit={handleSubmit}>
             <input type="text" onChange={handleChange} />
             <input type="submit" value="Search" />
           </form>
-          {renderMovies()}
+          {renderAllSearch()}
           <RandomMovie />
         </div>
       </div>
