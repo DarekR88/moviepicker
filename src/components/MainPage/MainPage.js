@@ -43,7 +43,7 @@ const MaimPage = (props) => {
             {data.known_for.map((knownForData) => {
               return (
                 <div>
-                  <p>{knownForData.original_title}</p>
+                  <h2>{knownForData.original_title}</h2>
                   <img
                     src={`http://image.tmdb.org/t/p/w500${knownForData.poster_path}`}
                     alt=""

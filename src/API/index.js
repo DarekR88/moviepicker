@@ -13,3 +13,24 @@ export const multiSearch = (term) => {
       `https://api.themoviedb.org/3/search/multi?api_key=805e6e3607d3f594b155862e71830dd2&language=en-US&page=1&include_adult=false&query=${term}`
     )
 };
+
+export const movieSearch = (term) => {
+  return axios
+    .get(
+      `https://api.themoviedb.org/3/search/movie?api_key=805e6e3607d3f594b155862e71830dd2&language=en-US&page=1&include_adult=false&query=${term}`
+    )
+};
+
+export const tvSearch = (term) => {
+  return axios
+    .get(
+      `https://api.themoviedb.org/3/search/tv?api_key=805e6e3607d3f594b155862e71830dd2&language=en-US&page=1&include_adult=false&query=${term}`
+    )
+};
+
+export const peopleSearch = (term) => {
+  return axios
+    .get(
+      `https://api.themoviedb.org/3/search/person?api_key=805e6e3607d3f594b155862e71830dd2&language=en-US&page=1&include_adult=false&query=${term}`
+    )
+};
