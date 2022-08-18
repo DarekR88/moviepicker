@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import AllSearch from "../AllSearch/AllSearch"
+import AllSearch from "../AllSearch/AllSearch";
 import MovieSearch from "../MovieSearch/MovieSearch";
 import TvSearch from "../TvSearch/TvSearch";
 import PeopleSearch from "../PeopleSearch/PeopleSearch";
@@ -8,7 +8,8 @@ import "./MainPage.scss";
 const MainPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchType, setSearchType] = useState("all");
-  const [globalTerm, setGlobalTerm] = useState("")
+  const [globalTerm, setGlobalTerm] = useState("");
+  const [searchSize, setSearchSize] = useState("large");
 
   let results;
 
@@ -34,39 +35,46 @@ const MainPage = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setGlobalTerm(searchTerm)
+    setGlobalTerm(searchTerm);
+    setSearchSize("small");
   };
 
   if (searchType === "all") {
-    results = <AllSearch globalTerm={globalTerm} />
+    results = <AllSearch globalTerm={globalTerm} />;
   }
 
   switch (searchType) {
-    case "all": results = <AllSearch globalTerm={globalTerm} />
-    break;
-    case "movies": results = <MovieSearch globalTerm={globalTerm} />
-    break;
-    case "tv": results = <TvSearch globalTerm={globalTerm} />
-    break;
-    case "people": results = <PeopleSearch globalTerm={globalTerm} />
-    break;
-    default: console.log("no results")
+    case "all":
+      results = <AllSearch globalTerm={globalTerm} />;
+      break;
+    case "movies":
+      results = <MovieSearch globalTerm={globalTerm} />;
+      break;
+    case "tv":
+      results = <TvSearch globalTerm={globalTerm} />;
+      break;
+    case "people":
+      results = <PeopleSearch globalTerm={globalTerm} />;
+      break;
+    default:
+      console.log("no results");
   }
-
-
 
   return (
     <div className="main-page">
+      <div className="form-wrapper">
+        <form className={`search-form-${searchSize}`} onSubmit={handleSubmit}>
+          <input className="search-field" type="text" onChange={handleChange} />
+          <input type="submit" value="Search" />
+        </form>
+      </div>
       <div className="search-type-button-wrapper">
         <button onClick={setSearchAll}>All</button>
         <button onClick={setSearchMovies}>Movies</button>
         <button onClick={setSearchTv}>Tv Shows</button>
         <button onClick={setSearchPeople}>People</button>
       </div>
-      <form className="search-form" onSubmit={handleSubmit}>
-        <input type="text" onChange={handleChange} />
-        <input type="submit" value="Search" />
-      </form>
+
       {results}
     </div>
   );
