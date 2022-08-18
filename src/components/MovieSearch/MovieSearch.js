@@ -21,6 +21,7 @@ const MovieSearch = (props) => {
           />
           <h2>{data.original_title}</h2>
           <p>{data.overview}</p>
+          <div className="divider"></div>
         </div>
       );
     });

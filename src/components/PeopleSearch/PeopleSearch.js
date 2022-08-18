@@ -21,6 +21,7 @@ const PeopleSearch = (props) => {
           />
           <h2>{data.name}</h2>
           <p>Popularity: {data.popularity}</p>
+          <div className="divider"></div>
           {data.known_for.map((knownForData) => {
             return (
               <div>
@@ -31,6 +32,7 @@ const PeopleSearch = (props) => {
                 <h2>{knownForData.original_title}</h2>
                 <h2>{knownForData.original_name}</h2>
                 <p>{knownForData.overview}</p>
+                <div className="divider"></div>
               </div>
             );
           })}

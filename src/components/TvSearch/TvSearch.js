@@ -21,6 +21,7 @@ const TvSearch = (props) => {
           />
           <h2>{data.original_name}</h2>
           <p>{data.overview}</p>
+          <div className="divider"></div>
         </div>
       );
     });
