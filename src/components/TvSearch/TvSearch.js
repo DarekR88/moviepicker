@@ -15,7 +15,7 @@ const TvSearch = (props) => {
     tvData.map((data) => {
       return (
         <div className="tv-card" key={data.id}>
-          <img
+          <img className="search-image"
             src={`http://image.tmdb.org/t/p/w500${data.poster_path}`}
             alt=""
           />

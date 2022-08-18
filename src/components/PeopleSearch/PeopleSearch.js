@@ -15,7 +15,7 @@ const PeopleSearch = (props) => {
     peopleData.map((data) => {
       return (
         <div className="person-card" key={data.id}>
-          <img
+          <img className="search-image"
             src={`http://image.tmdb.org/t/p/w500${data.profile_path}`}
             alt=""
           />
@@ -25,7 +25,7 @@ const PeopleSearch = (props) => {
           {data.known_for.map((knownForData) => {
             return (
               <div>
-                <img
+                <img className="search-image"
                   src={`http://image.tmdb.org/t/p/w500${knownForData.poster_path}`}
                   alt=""
                 />

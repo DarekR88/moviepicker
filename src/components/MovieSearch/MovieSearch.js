@@ -15,7 +15,7 @@ const MovieSearch = (props) => {
     movieData.map((data) => {
       return (
         <div className="movie-card" key={data.id}>
-          <img
+          <img className="search-image"
             src={`http://image.tmdb.org/t/p/w500${data.poster_path}`}
             alt=""
           />

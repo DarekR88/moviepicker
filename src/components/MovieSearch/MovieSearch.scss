@@ -4,3 +4,12 @@
   margin: 10px 0px;
   background: black;
 }
+
+@media (max-width: 768px) {
+  .search-image {
+    max-width: 90%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
