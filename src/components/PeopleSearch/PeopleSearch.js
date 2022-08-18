@@ -15,21 +15,21 @@ const PeopleSearch = (props) => {
     peopleData.map((data) => {
       return (
         <div className="person-card" key={data.id}>
-          <h2>{data.name}</h2>
           <img
             src={`http://image.tmdb.org/t/p/w500${data.profile_path}`}
             alt=""
           />
+          <h2>{data.name}</h2>
           <p>Popularity: {data.popularity}</p>
           {data.known_for.map((knownForData) => {
             return (
               <div>
-                <h2>{knownForData.original_title}</h2>
-                <h2>{knownForData.original_name}</h2>
                 <img
                   src={`http://image.tmdb.org/t/p/w500${knownForData.poster_path}`}
                   alt=""
                 />
+                <h2>{knownForData.original_title}</h2>
+                <h2>{knownForData.original_name}</h2>
                 <p>{knownForData.overview}</p>
               </div>
             );
