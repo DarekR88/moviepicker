@@ -14,4 +14,29 @@
   .search-field {
     width: 80%;
   }
+
+  .search-type-button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .search-button-large {
+    font-size: .75rem;
+    padding: 5px;
+    width: 65px;
+  }
+
+  .submit-button-large {
+    font-size: 1rem;
+    padding: 5px;
+    margin: 10px 0px;
+  }
+
+  .search-field-large {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  
 }

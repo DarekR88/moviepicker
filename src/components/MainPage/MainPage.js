@@ -64,15 +64,15 @@ const MainPage = () => {
     <div className="main-page">
       <div className="form-wrapper">
         <form className={`search-form-${searchSize}`} onSubmit={handleSubmit}>
-          <input className="search-field" type="text" onChange={handleChange} />
-          <input type="submit" value="Search" />
+          <input className={`search-field-${searchSize}`} type="text" onChange={handleChange} />
+          <input className={`submit-button-${searchSize}`} type="submit" value="Search" />
         </form>
       </div>
       <div className="search-type-button-wrapper">
-        <button onClick={setSearchAll}>All</button>
-        <button onClick={setSearchMovies}>Movies</button>
-        <button onClick={setSearchTv}>Tv Shows</button>
-        <button onClick={setSearchPeople}>People</button>
+        <button className={`search-button-${searchSize}`} onClick={setSearchAll}>All</button>
+        <button className={`search-button-${searchSize}`} onClick={setSearchMovies}>Movies</button>
+        <button className={`search-button-${searchSize}`} onClick={setSearchTv}>Tv Shows</button>
+        <button className={`search-button-${searchSize}`} onClick={setSearchPeople}>People</button>
       </div>
 
       {results}
